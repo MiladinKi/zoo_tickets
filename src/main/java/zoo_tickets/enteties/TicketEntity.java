@@ -14,11 +14,11 @@ public class TicketEntity {
     private LocalDateTime issuedTime;
     private LocalDateTime validUnit;
     @Enumerated(EnumType.STRING)
-    private ETickets ticket;
+    private ETickets ticketType;
 
     @ManyToOne
     @JoinColumn(name = "zone")
-    private VisitZoneEntity zone;
+    private VisitZoneEntity visitZone;
 
     @ManyToOne
     @JoinColumn(name = "user")
@@ -31,12 +31,12 @@ public class TicketEntity {
     public TicketEntity() {
     }
 
-    public TicketEntity(Integer id, ReservationEntity reservation, UserEntity user, VisitZoneEntity zone, ETickets ticket, LocalDateTime validUnit, LocalDateTime issuedTime, String barCode, Double price) {
+    public TicketEntity(Integer id, ReservationEntity reservation, UserEntity user, VisitZoneEntity visitZone, ETickets ticketType, LocalDateTime validUnit, LocalDateTime issuedTime, String barCode, Double price) {
         this.id = id;
         this.reservation = reservation;
         this.user = user;
-        this.zone = zone;
-        this.ticket = ticket;
+        this.visitZone = visitZone;
+        this.ticketType = ticketType;
         this.validUnit = validUnit;
         this.issuedTime = issuedTime;
         this.barCode = barCode;
@@ -83,20 +83,20 @@ public class TicketEntity {
         this.validUnit = validUnit;
     }
 
-    public ETickets getTicket() {
-        return ticket;
+    public ETickets getTicketType() {
+        return ticketType;
     }
 
-    public void setTicket(ETickets ticket) {
-        this.ticket = ticket;
+    public void setTicketType(ETickets ticketType) {
+        this.ticketType = ticketType;
     }
 
-    public VisitZoneEntity getZone() {
-        return zone;
+    public VisitZoneEntity getVisitZone() {
+        return visitZone;
     }
 
-    public void setZone(VisitZoneEntity zone) {
-        this.zone = zone;
+    public void setVisitZone(VisitZoneEntity visitZone) {
+        this.visitZone = visitZone;
     }
 
     public UserEntity getUser() {
