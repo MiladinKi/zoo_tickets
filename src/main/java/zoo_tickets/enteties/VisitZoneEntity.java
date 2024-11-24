@@ -12,7 +12,7 @@ public class VisitZoneEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Enumerated(EnumType.ORDINAL)
-    private EZone zone;
+    private EZone visitZone;
     @NotNull
     private Double basePrice;
     @NotNull
@@ -25,9 +25,9 @@ public class VisitZoneEntity {
     public VisitZoneEntity() {
     }
 
-    public VisitZoneEntity(Integer id, EZone zone, Double basePrice, String descriptionZone, List<TicketEntity> tickets) {
+    public VisitZoneEntity(Integer id, EZone visitZone, Double basePrice, String descriptionZone, List<TicketEntity> tickets) {
         this.id = id;
-        this.zone = zone;
+        this.visitZone = visitZone;
         this.basePrice = basePrice;
         this.descriptionZone = descriptionZone;
         this.tickets = tickets;
@@ -65,11 +65,11 @@ public class VisitZoneEntity {
         this.basePrice = basePrice;
     }
 
-    public EZone getZone() {
-        return zone;
+    public EZone getVisitZone() {
+        return visitZone;
     }
 
-    public void setZone(EZone zone) {
-        this.zone = zone;
+    public void setVisitZone(EZone visitZone) {
+        this.visitZone = visitZone;
     }
 }
